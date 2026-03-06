@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Mini Bager Dragan – iskopi, ravnanje terena, priprema placa, behaton kocke i usluge mini bagerom za Užice i Zlatiborski region." />
+  <title>Mini Bager Dragan | Iskopi i zemljani radovi – Užice i Zlatiborski region</title>
+
+  <style>
+    :root{
+      --bg:#fffdf5;
+      --text:#1d1d1b;
+      --muted:#5f5a48;
+
+      --yellow1:#ffd84d;
+      --yellow2:#f2c100;
+      --yellow3:#c89d00;
+      --dark:#2a2a2a;
+      --dark2:#3a3a3a;
+
+      --card:#ffffff;
+      --border: rgba(42,42,42,.14);
+      --shadow: 0 18px 40px rgba(0,0,0,.10);
+      --shadow2: 0 10px 24px rgba(0,0,0,.08);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 650px at 10% -10%, rgba(255,216,77,.35), transparent 55%),
+        radial-gradient(900px 600px at 100% 0%, rgba(242,193,0,.22), transparent 52%),
+        linear-gradient(180deg, #fffef8, var(--bg));
+      line-height:1.45;
+    }
+
+    a{color:inherit}
+    img{max-width:100%; display:block}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    .topbar{
+      font-size:13px;
+      color:rgba(29,29,27,.92);
+      border-bottom:1px solid rgba(42,42,42,.08);
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+    }
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; padding:10px 0;
+      flex-wrap:wrap;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 12px;
+      border:1px solid rgba(42,42,42,.10);
+      border-radius:999px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 8px 18px rgba(0,0,0,.05);
+    }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(42,42,42,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--yellow1), var(--yellow2));
+      position:relative;
+      box-shadow: 0 14px 26px rgba(242,193,0,.24);
+      overflow:hidden;
+      border:1px solid rgba(42,42,42,.12);
+      flex:0 0 auto;
+    }
+    .logo:before{
+      content:"";
+      position:absolute; inset:8px 10px 8px 10px;
+      border-radius:8px;
+      background: linear-gradient(180deg, rgba(42,42,42,.90), rgba(42,42,42,.65));
+      clip-path: polygon(0 100%, 45% 0, 100% 0, 56% 100%);
+    }
+    .brand span:last-child{font-size:16px}
+    .menu{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .menu a{
+      text-decoration:none;
+      color:rgba(29,29,27,.82);
+      padding:8px 10px;
+      border-radius:12px;
+      transition:.18s ease;
+    }
+    .menu a:hover{
+      background: rgba(242,193,0,.12);
+      transform: translateY(-1px);
+    }
+
+    .cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(42,42,42,.14);
+      background: linear-gradient(180deg, #ffffff, #fffdf7);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:
+        0 10px 18px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.95);
+      transition: transform .16s ease, box-shadow .16s ease;
+      user-select:none;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 24px rgba(0,0,0,.10),
+        inset 0 1px 0 rgba(255,255,255,.95);
+    }
+    .btn.primary{
+      border:none;
+      color:#1d1d1b;
+      background: linear-gradient(135deg, var(--yellow1), var(--yellow2));
+      box-shadow:
+        0 14px 26px rgba(242,193,0,.24),
+        inset 0 1px 0 rgba(255,255,255,.6);
+    }
+    .btn.dark{
+      border:none;
+      color:#ffffff;
+      background: linear-gradient(135deg, var(--dark2), var(--dark));
+      box-shadow:
+        0 14px 26px rgba(42,42,42,.18),
+        inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .hero{padding:34px 0 18px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(255,255,255,.94);
+      border:1px solid rgba(42,42,42,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:22px}
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+    }
+    .sub{
+      color: rgba(29,29,27,.78);
+      font-size:15px;
+      margin:0 0 16px;
+    }
+    .badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin:14px 0 18px;
+    }
+    .badge{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(42,42,42,.10);
+      background: rgba(242,193,0,.10);
+      color: rgba(29,29,27,.86);
+      font-size:13px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.04);
+    }
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap}
+
+    .heroImg,
+    .locImg,
+    .gallery img,
+    .doubleGallery img{
+      width:100%;
+      object-fit:cover;
+      border-radius: var(--radius);
+      border:1px solid rgba(42,42,42,.10);
+      box-shadow: var(--shadow2);
+      background:#f3f3f3;
+      display:block;
+    }
+    .heroImg,
+    .locImg{height:260px; margin-top:16px}
+
+    .sideBox{padding:18px}
+    .sideBox h3{margin:0 0 10px; font-size:16px}
+    .kv{display:grid; gap:10px; margin-top:10px}
+    .kv .item{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(42,42,42,.10);
+      background: linear-gradient(180deg, #ffffff, #fffdf8);
+      box-shadow: var(--shadow2);
+    }
+    .kv .k{font-size:12px; color:rgba(29,29,27,.62)}
+    .kv .v{font-weight:900; margin-top:4px}
+    .kv .v a{text-decoration:none; color: var(--dark)}
+    .kv .v a:hover{text-decoration:underline}
+
+    .section{padding:18px 0}
+    .section h2{
+      margin:0 0 12px;
+      font-size:22px;
+      letter-spacing:-.3px;
+    }
+    .muted{color: rgba(29,29,27,.74)}
+
+    .grid3{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .step,
+    .serviceCard{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(42,42,42,.10);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow2);
+    }
+    .step .num{
+      width:36px; height:36px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(255,216,77,.28), rgba(242,193,0,.18));
+      border:1px solid rgba(42,42,42,.08);
+      font-weight:1000;
+      margin-bottom:10px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+    .step h4,
+    .serviceCard h4{margin:0 0 6px; font-size:15px}
+    .step p,
+    .serviceCard p{margin:0; color:rgba(29,29,27,.70); font-size:14px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .gallery figure,
+    .doubleGallery figure{margin:0}
+    .gallery img{height:220px}
+
+    .doubleGallery{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .doubleGallery img{height:300px}
+    .figcap{
+      margin-top:8px;
+      font-size:13px;
+      color: rgba(29,29,27,.68);
+      text-align:center;
+      font-weight:700;
+    }
+
+    .twoCols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+
+    .loc{padding:18px}
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(242,193,0,.14);
+      border:1px solid rgba(242,193,0,.28);
+      font-size:13px;
+      color: rgba(29,29,27,.82);
+    }
+
+    details{
+      border:1px solid rgba(42,42,42,.10);
+      border-radius:16px;
+      background: rgba(255,255,255,.94);
+      padding:12px 14px;
+      box-shadow: var(--shadow2);
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:900}
+    summary::-webkit-details-marker{display:none}
+
+    footer{
+      margin-top:12px;
+      border-top:1px solid rgba(42,42,42,.08);
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(255,216,77,.18), transparent 55%),
+        radial-gradient(900px 520px at 90% 0%, rgba(242,193,0,.14), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.80), rgba(255,255,255,.94));
+    }
+    .footerGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      padding:18px 0;
+    }
+    .form{display:grid; gap:10px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(42,42,42,.14);
+      background: rgba(255,255,255,.96);
+      color: var(--text);
+      outline:none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.95);
+      font: inherit;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .note{font-size:12px; color:rgba(29,29,27,.60); margin-top:8px}
+    .small{font-size:13px; color:rgba(29,29,27,.72)}
+
+    @media (max-width: 920px){
+      .heroGrid,
+      .grid3,
+      .twoCols,
+      .footerGrid,
+      .doubleGallery,
+      .gallery{grid-template-columns:1fr}
+      .gallery img{height:210px}
+      .doubleGallery img{height:240px}
+      header{position:relative}
+      .menu{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <div class="pill">Lokacija: <strong>Užice · Zlatiborski region</strong></div>
+        <div class="pill">Dostupno za: <strong>iskope, ravnanje, behaton i pripremu terena</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Početna">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Mini Bager Dragan</span>
+        </a>
+
+        <nav class="menu" aria-label="Glavni meni">
+          <a href="#pocetna">Početna</a>
+          <a href="#usluge">Usluge</a>
+          <a href="#proces">Kako radimo</a>
+          <a href="#galerija">Galerija</a>
+          <a href="#teren">Teren</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="tel:+381612519456">Pozovi</a>
+          <a class="btn primary" href="#kontakt">Pošalji upit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="pocetna" class="hero">
+      <div class="wrap">
+        <div class="heroGrid">
+          <div class="card heroMain">
+            <h1>Zemljani radovi i usluge mini bagerom</h1>
+            <p class="sub">
+              Mini Bager Dragan pruža pouzdane usluge iskopa, ravnanja terena, pripreme placa, postavljanje behaton kocki za staze i parking, kao i ostale zemljane radove.
+              Brz dogovor, ozbiljan pristup i pouzdan rad na terenu bez komplikacija.
+            </p>
+
+            <div class="badges" aria-label="Istaknute stavke">
+              <span class="badge">Mini bager usluge</span>
+              <span class="badge">Užice i Zlatiborski region</span>
+              <span class="badge">Brz izlazak na teren · spremni i za velike projekte</span>
+            </div>
+
+            <div class="heroActions">
+              <a class="btn primary" href="tel:+381612519456">Pozovi 061/251-9456</a>
+              <a class="btn dark" href="#usluge">Pogledaj usluge</a>
+              <a class="btn" href="#galerija">Galerija radova</a>
+            </div>
+
+            <img class="heroImg" src="assets/1dragan.jpg" alt="Mini bager Dragan na terenu" loading="eager" />
+          </div>
+
+          <aside class="card sideBox" aria-label="Brzi kontakt">
+            <h3>Brzi kontakt</h3>
+            <div class="kv">
+              <div class="item">
+                <div class="k">Telefon</div>
+                <div class="v"><a href="tel:+381612519456">061/251-9456</a></div>
+              </div>
+              <div class="item">
+                <div class="k">Email</div>
+                <div class="v"><a href="mailto:dragan.tesic@impol.rs">dragan.tesic@impol.rs</a></div>
+              </div>
+              <div class="item">
+                <div class="k">Područje rada</div>
+                <div class="v">Užice · Zlatibor · okolina</div>
+              </div>
+              <div class="item">
+                <div class="k">Delatnost</div>
+                <div class="v">Iskopi, ravnanje, priprema terena, behaton staze i parking</div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn dark" href="#kontakt">Pošalji upit</a>
+              <a class="btn" href="#teren">Slike sa terena</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="usluge" class="section">
+      <div class="wrap">
+        <h2>Usluge</h2>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="serviceCard">
+            <h4>Iskopi mini bagerom</h4>
+            <p>Iskop kanala, temelja, rupa i priprema terena za dalje građevinske radove.</p>
+          </div>
+          <div class="serviceCard">
+            <h4>Ravnanje i čišćenje placa</h4>
+            <p>Uređenje terena, skidanje površinskog sloja i priprema placa za gradnju ili prilaz.</p>
+          </div>
+          <div class="serviceCard">
+            <h4>Priprema za instalacije</h4>
+            <p>Iskop za vodu, struju, kanalizaciju i druge podzemne instalacije.</p>
+          </div>
+          <div class="serviceCard">
+            <h4>Prilazi i manji zemljani radovi</h4>
+            <p>Radovi oko kuće, vikendice, dvorišta i svih mesta gde velika mehanizacija ne prolazi lako.</p>
+          </div>
+          <div class="serviceCard">
+            <h4>Utovar i pomeranje materijala</h4>
+            <p>Pomoć pri pomeranju zemlje, šuta, kamena i sličnog materijala na terenu.</p>
+          </div>
+          <div class="serviceCard">
+            <h4>Behaton staze i parking</h4>
+            <p>Priprema podloge, nivelacija terena i postavljanje behaton kocki za staze, dvorišta i parking prostore.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces" class="section">
+      <div class="wrap">
+        <h2>Kako radimo</h2>
+        <p class="muted">
+          Jednostavno i jasno: dogovor, izlazak na teren, procena i izvođenje radova bez komplikacije.
+        </p>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="step">
+            <div class="num">1</div>
+            <h4>Kontakt i dogovor</h4>
+            <p>Poziv ili poruka, kratko objašnjenje šta treba da se radi i gde se teren nalazi.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h4>Procena na terenu</h4>
+            <p>Dogovor obima posla, pristupa terenu i potrebne mehanizacije.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h4>Izvođenje radova</h4>
+            <p>Iskop, ravnanje, priprema ili drugi zemljani radovi po dogovoru.</p>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <h4>Kontrola i završetak</h4>
+            <p>Provera urađenog posla i završno sređivanje radne zone koliko teren dozvoljava.</p>
+          </div>
+          <div class="step">
+            <div class="num">5</div>
+            <h4>Behaton priprema</h4>
+            <p>Nivelacija i priprema podloge za staze, dvorišta i parking površine.</p>
+          </div>
+          <div class="step">
+            <div class="num">6</div>
+            <h4>Dalji dogovor</h4>
+            <p>Ako treba nastavak radova, proširenje iskopa ili novi termin, lako se dogovara.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px; padding:16px">
+          <div class="gallery" aria-label="Fotografije procesa rada">
+            <figure>
+              <img src="assets/2dragan.jpg" alt="Mini bager tokom iskopa na terenu" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="assets/3dragan.jpg" alt="Priprema i ravnanje terena ispred kuće" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="assets/4dragan.jpg" alt="Iskop i priprema podloge na terenu" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerija" class="section">
+      <div class="wrap">
+        <h2>Galerija radova</h2>
+        <p class="muted">Radovi na iskopu, pripremi terena, transportu mašine i završnim površinama.</p>
+
+        <div class="card" style="padding:16px">
+          <div class="doubleGallery" aria-label="Dve istaknute fotografije radova">
+            <figure>
+              <img src="assets/6dragan.jpg" alt="Postavljena behaton površina i uređen prostor" loading="lazy" />
+              <div class="figcap">Behaton i završna površina</div>
+            </figure>
+            <figure>
+              <img src="assets/7dragan.jpg" alt="Mini bager u transportu na kamionu" loading="lazy" />
+              <div class="figcap">Transport mašine i izlazak na teren</div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teren" class="section">
+      <div class="wrap">
+        <h2>Područje rada</h2>
+        <p class="muted">Usluge za Užice, Zlatibor i okolinu, po dogovoru i prema vrsti posla.</p>
+
+        <div class="twoCols" style="margin-top:14px">
+          <div class="card loc">
+            <h3>Gde radimo</h3>
+            <p>Izlazak na teren za manje i srednje zemljane radove, ali i ozbiljnije projekte u regionu.</p>
+            <div class="chips" aria-label="Lokacije">
+              <span class="chip">Užice</span>
+              <span class="chip">Zlatibor</span>
+              <span class="chip">Čajetina</span>
+              <span class="chip">Okolina</span>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn dark" href="tel:+381612519456">Pozovi</a>
+              <a class="btn" href="mailto:dragan.tesic@impol.rs">Email</a>
+            </div>
+          </div>
+
+          <div class="card loc">
+            <h3>Slika sa terena</h3>
+            <p class="muted">Primer pripreme i uređenja radne površine na terenu.</p>
+            <img class="locImg" src="assets/5dragan.jpg" alt="Mini bager i teren pripremljen za radove" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Zašto Mini Bager Dragan?</h2>
+        <p class="muted">
+          Kada treba precizan rad na manjem ili nepristupačnom terenu, mini bager je često pravo rešenje.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Česta pitanja</h2>
+
+        <details>
+          <summary>Koje vrste radova obavljate?</summary>
+          <div class="muted" style="margin-top:10px">Iskope, ravnanje terena, pripremu placa, behaton staze, parking površine i ostale manje zemljane radove po dogovoru.</div>
+        </details>
+
+        <details>
+          <summary>Na kojim lokacijama radite?</summary>
+          <div class="muted" style="margin-top:10px">Užice, Zlatibor i šira okolina, u zavisnosti od vrste i obima posla.</div>
+        </details>
+
+        <details>
+          <summary>Kako da pošaljem upit?</summary>
+          <div class="muted" style="margin-top:10px">Najbrže pozivom na 061/251-9456 ili porukom kroz kontakt formu na sajtu.</div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontakt">
+    <div class="wrap">
+      <div class="footerGrid">
+        <div class="card" style="padding:18px">
+          <h2 style="margin:0 0 10px; font-size:20px">Kontakt</h2>
+          <p class="muted" style="margin:0 0 12px">
+            Pozovi ili pošalji upit za zemljane radove, iskope, pripremu terena i behaton radove u Užicu i Zlatiborskom regionu.
+          </p>
+
+          <div class="kv">
+            <div class="item">
+              <div class="k">Telefon</div>
+              <div class="v"><a href="tel:+381612519456">061/251-9456</a></div>
+            </div>
+            <div class="item">
+              <div class="k">Email</div>
+              <div class="v"><a href="mailto:dragan.tesic@impol.rs">dragan.tesic@impol.rs</a></div>
+            </div>
+            <div class="item">
+              <div class="k">Lokacija</div>
+              <div class="v">Užice · Zlatibor region</div>
+            </div>
+          </div>
+
+          <div class="note">Spremni za manje, srednje i veće projekte, u zavisnosti od dogovora i obima posla.</div>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h2 style="margin:0 0 10px; font-size:20px">Pošalji upit</h2>
+
+          <form class="form" id="mailForm">
+            <input id="name" type="text" placeholder="Ime" autocomplete="name" />
+            <input id="phone" type="tel" placeholder="Telefon" autocomplete="tel" />
+            <textarea id="msg" placeholder="Poruka (npr. lokacija, vrsta radova, okviran obim posla)"></textarea>
+            <button class="btn primary" type="submit">Pošalji</button>
+          </form>
+
+          <div class="note">
+            U poruci napiši lokaciju, šta treba da se radi i po mogućstvu okvirne dimenzije ili opis terena.
+          </div>
+        </div>
+      </div>
+
+      <div class="small" style="padding:10px 0 18px; color:rgba(29,29,27,.62)">
+        © <span id="year"></span> Mini Bager Dragan · Iskopi i zemljani radovi<br>
+        Održavanje sajta: www.silverado.pro
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name = (document.getElementById('name').value || '').trim();
+      var phone = (document.getElementById('phone').value || '').trim();
+      var msg = (document.getElementById('msg').value || '').trim();
+
+      var subject = encodeURIComponent('Upit sa sajta – Mini Bager Dragan');
+      var body = encodeURIComponent(
+        'Ime: ' + name + '\n' +
+        'Telefon: ' + phone + '\n\n' +
+        'Poruka:\n' + msg + '\n\n' +
+        'Lokacija rada: Užice / Zlatibor region\n'
+      );
+
+      window.location.href = 'mailto:dragan.tesic@impol.rs?subject=' + subject + '&body=' + body;
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
