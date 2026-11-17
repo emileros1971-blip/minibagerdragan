@@ -375,7 +375,7 @@
 
         <div class="cta">
           <a class="btn" href="tel:+381612519456">Pozovi</a>
-          <a class="btn primary" href="#kontakt">Pošalji upit</a>
+          <a class="btn primary" href="#kontakt">Kontakt</a>
         </div>
       </div>
     </div>
@@ -415,10 +415,6 @@
                 <div class="v"><a href="tel:+381612519456">061/251-9456</a></div>
               </div>
               <div class="item">
-                <div class="k">Email</div>
-                <div class="v"><a href="mailto:dragan.tesic@impol.rs">dragan.tesic@impol.rs</a></div>
-              </div>
-              <div class="item">
                 <div class="k">Područje rada</div>
                 <div class="v">Užice · Zlatibor · okolina</div>
               </div>
@@ -429,7 +425,7 @@
             </div>
 
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn dark" href="#kontakt">Pošalji upit</a>
+              <a class="btn dark" href="#kontakt">Kontakt</a>
               <a class="btn" href="#teren">Slike sa terena</a>
             </div>
           </aside>
@@ -561,7 +557,6 @@
             </div>
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn dark" href="tel:+381612519456">Pozovi</a>
-              <a class="btn" href="mailto:dragan.tesic@impol.rs">Email</a>
             </div>
           </div>
 
@@ -598,8 +593,8 @@
         </details>
 
         <details>
-          <summary>Kako da pošaljem upit?</summary>
-          <div class="muted" style="margin-top:10px">Najbrže pozivom na 061/251-9456 ili porukom kroz kontakt formu na sajtu.</div>
+          <summary>Kako da se raspitam za radove?</summary>
+          <div class="muted" style="margin-top:10px">Pozovi 061/251-9456 za dogovor.</div>
         </details>
       </div>
     </section>
@@ -611,17 +606,13 @@
         <div class="card" style="padding:18px">
           <h2 style="margin:0 0 10px; font-size:20px">Kontakt</h2>
           <p class="muted" style="margin:0 0 12px">
-            Pozovi ili pošalji upit za zemljane radove, iskope, pripremu terena i behaton radove u Užicu i Zlatiborskom regionu.
+            Pozovi za zemljane radove, iskope, pripremu terena i behaton radove u Užicu i Zlatiborskom regionu.
           </p>
 
           <div class="kv">
             <div class="item">
               <div class="k">Telefon</div>
               <div class="v"><a href="tel:+381612519456">061/251-9456</a></div>
-            </div>
-            <div class="item">
-              <div class="k">Email</div>
-              <div class="v"><a href="mailto:dragan.tesic@impol.rs">dragan.tesic@impol.rs</a></div>
             </div>
             <div class="item">
               <div class="k">Lokacija</div>
@@ -633,18 +624,9 @@
         </div>
 
         <div class="card" style="padding:18px">
-          <h2 style="margin:0 0 10px; font-size:20px">Pošalji upit</h2>
+          <h2 style="margin:0 0 10px; font-size:20px">Pozovi za dogovor</h2>
 
-          <form class="form" id="mailForm">
-            <input id="name" type="text" placeholder="Ime" autocomplete="name" />
-            <input id="phone" type="tel" placeholder="Telefon" autocomplete="tel" />
-            <textarea id="msg" placeholder="Poruka (npr. lokacija, vrsta radova, okviran obim posla)"></textarea>
-            <button class="btn primary" type="submit">Pošalji</button>
-          </form>
-
-          <div class="note">
-            U poruci napiši lokaciju, šta treba da se radi i po mogućstvu okvirne dimenzije ili opis terena.
-          </div>
+          <a class="btn primary" href="tel:+381612519456">Pozovi 061/251-9456</a>
         </div>
       </div>
 
@@ -656,24 +638,6 @@
   </footer>
 
   <script>
-    document.getElementById('mailForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var name = (document.getElementById('name').value || '').trim();
-      var phone = (document.getElementById('phone').value || '').trim();
-      var msg = (document.getElementById('msg').value || '').trim();
-
-      var subject = encodeURIComponent('Upit sa sajta – Mini Bager Dragan');
-      var body = encodeURIComponent(
-        'Ime: ' + name + '\n' +
-        'Telefon: ' + phone + '\n\n' +
-        'Poruka:\n' + msg + '\n\n' +
-        'Lokacija rada: Užice / Zlatibor region\n'
-      );
-
-      window.location.href = 'mailto:dragan.tesic@impol.rs?subject=' + subject + '&body=' + body;
-    });
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
